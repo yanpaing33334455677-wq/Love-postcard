@@ -4,6 +4,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Surprise 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ display:flex;justify-content:center;align-items:center;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(135deg,#ffd6e7,#ffe9d9);
+ color:#85415f;padding:20px;
+}
+.card{
+ background:#fff9fc;width:100%;max-width:390px;
+ padding:30px 20px;border-radius:30px;
+ text-align:center;box-shadow:0 12px 35px #d88baa55;
+}
+h1{color:#e56b9e;font-size:27px}
+.animals{font-size:65px;margin:25px 0}
+p{font-size:19px;line-height:1.8}
+.buttons{display:flex;justify-content:center;gap:15px;
+ flex-wrap:wrap;margin:25px 0;min-height:55px}
+button{
+ border:0;border-radius:30px;padding:15px 27px;
+ font-size:17px;cursor:pointer;
+}
+#yes{background:#ec70a7;color:white}
+#no{background:#ddd;color:#555}
+#result{font-size:22px;color:#e34f91;font-weight:bold}
+.heart{position:fixed;pointer-events:none;
+ animation:fall 3s linear forwards;font-size:25px}
+@keyframes fall{
+ from{transform:translateY(-30px);opacity:1}
+ to{transform:translateY(100vh);opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>💗 A Little Surprise 💗</h1>
+<div class="animals">🐻 💕 🐰</div>
+<p>ဟေး... Crush လေးရေ 🥺</p>
+<p>မင်းကို ပြောစရာလေးတစ်ခုရှိတယ်။</p>
+<h2>Do You Like Me? 💖</h2>
+<div class="buttons">
+<button id="yes" onclick="yesClick()">YES 💗</button>
+<button id="no" onclick="noClick()">NO 🙈</button>
+</div>
+<div id="result"></div>
+<div style="font-size:35px;margin-top:20px">🌷 🧸 💕</div>
+</div>
+<script>
+let count=0;
+function yesClick(){
+ document.getElementById('result').innerHTML=
+ 'Yay! 💗 Thank You! 🥰<br>I am so happy! 💕';
+ for(let i=0;i<35;i++){
+  setTimeout(()=>{
+   let h=document.createElement('div');
+   h.className='heart';
+   h.textContent=['💗','💕','💖','🌸'][Math.floor(Math.random()*4)];
+   h.style.left=Math.random()*100+'vw';
+   h.style.top='-30px';
+   document.body.appendChild(h);
+   setTimeout(()=>h.remove(),3000);
+  },i*80);
+ }
+}
+function noClick(){
+ count++;
+ const b=document.getElementById('no');
+ if(count<3){
+  b.textContent='Are you sure? 🥺';
+  document.getElementById('result').textContent=
+  'Hehe... စဉ်းစားကြည့်ပါဦး 🙈';
+ }else{
+  b.textContent='No thanks';
+  document.getElementById('result').textContent=
+  'ရပါတယ်နော် 💗 Thanks for answering!';
+  b.onclick=()=>{
+   document.getElementById('result').textContent=
+   'I respect your choice 🌷';
+  };
+ }
+}
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Little Love Surprise</title>
 
 <style>
